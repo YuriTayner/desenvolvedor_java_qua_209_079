@@ -26,7 +26,7 @@ public class App {
 
             imc = peso / (altura * altura);
 
-            System.out.println("Seu IMC é de: " + imc);
+            System.out.println("Seu IMC é de: " + String.format("%.2f", imc));
 
             if (imc < 18.5) {
                 System.out.println(nome + ": Magreza");
