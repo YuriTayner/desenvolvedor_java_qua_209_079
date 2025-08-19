@@ -41,9 +41,9 @@ public class Combustivel {
 
     public String etanolCompensa(){
         if(this.precoEtanol <= this.resultado){
-            return "CUMPENSA";
+            return "CUMPENSA, compre etanol";
         } else {
-            return "NUM CUMPENSA";
+            return "NUM CUMPENSA, vai de gasolina mesmo";
         }
     }
 }

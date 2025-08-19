@@ -12,15 +12,19 @@ public class App {
         Combustivel ipiranga = new Combustivel(0, 0, 0);
         String[] opcoes = {"Iniciar", "Sair"};
         Object opcao;
-
         do{
             opcao = JOptionPane.showInputDialog(null, "Selecione uma opção: ", "Compensa comprar Etanol?", JOptionPane.QUESTION_MESSAGE, null, opcoes, opcoes[0]);
-            ipiranga.setPrecoGasolina(Double.parseDouble(JOptionPane.showInputDialog("Informe o preço da gasolina(R$)")));
-            ipiranga.setPrecoEtanol(Double.parseDouble(JOptionPane.showInputDialog("Informe o preço do etanol(R$)")));
-            
-            ipiranga.compararCombustivel();
 
-            JOptionPane.showMessageDialog(null, "Imc: " + ipiranga.etanolCompensa());
+            if(opcao != "Sair"){
+                ipiranga.setPrecoGasolina(Double.parseDouble(JOptionPane.showInputDialog("Informe o preço da gasolina(R$)").replace(",", ".")));
+                ipiranga.setPrecoEtanol(Double.parseDouble(JOptionPane.showInputDialog("Informe o preço do etanol(R$)").replace(",", ".")));
+                
+                ipiranga.compararCombustivel();
+
+                JOptionPane.showMessageDialog(null, ipiranga.etanolCompensa());
+            } else {
+                break;
+            }
 
         } while(opcao != "Sair");
     }
