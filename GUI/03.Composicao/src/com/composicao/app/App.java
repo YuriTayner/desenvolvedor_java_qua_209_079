@@ -34,7 +34,6 @@ public class App {
                     valor = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor do depósito: (R$)"));
                     JOptionPane.showMessageDialog(null, "Depósito efetuado com sucesso!\nSaldo atual: R$ "+ cc.fazerDeposito(valor), "Depósito", JOptionPane.INFORMATION_MESSAGE);
                     break;
-
             }
 
         } while (opcao != "Sair");
