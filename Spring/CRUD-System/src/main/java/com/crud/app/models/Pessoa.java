@@ -19,11 +19,7 @@ public class Pessoa implements Serializable{
        private String email;
 
 
-    public Pessoa(long idPessoa, String nome, String cpf, String email) {
-        this.idPessoa = idPessoa;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
+    public Pessoa() {
     }
 
 
