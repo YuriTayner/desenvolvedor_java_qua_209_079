@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https//thymeleaf.org"
+xmnls:layout="https//www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body>
+    <div class="navbar">
+        <div>
+            <a href="/">Início</a>
+            <a href="cadastrar">Cadastrar Usuário</a>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <h1 id="inicio">Lista de Usuário</h1>
+        <div>
+            <table class="tabela-usuarios">
+                <thead>
+                    <tr style="color: black;">
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>CPF</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${usuario.idPessoa}"></td>
+                        <td th:text="${usuario.nome}"></td>
+                        <td th:text="${usuario.email}"></td>
+                        <td th:text="${usuario.cpf}"></td>
+                        <td>
+                            <button class="btn-alterar">Alterar</button>
+                            <button class="btn-excluir">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
