@@ -13,14 +13,70 @@
         <div>
             <a href="/">Início</a>
             <a href="cadastrar">Cadastrar Usuário</a>
-             <a href="listar">Listar Usuário</a>
+            <a href="listar">Listar Usuário</a>
         </div>
     </div>
 
     <!-- Conteúdo principal -->
     <div class="content">
-        <h1 id="inicio">Bem-vindo!</h1>
-        <p>Este é um site simples com tema escuro.</p>
+        <div class="main-container">
+            <div class="main-content">
+                <h1 id="inicio">Bem-vindo!</h1>
+                <p>Este é um site simples com tema escuro.</p>
+                <h2>O que é um CRUD?</h2>
+                <img src="img/crud1.jfif">
+                <p>No universo do desenvolvimento de sistemas, é impossível ignorar a importância das operações básicas de
+                manipulação de dados, representadas pelo acrônimo CRUD: Create (Criar), Read (Ler), Update (Atualizar) e
+                Delete (Excluir). Esses quatro pilares sustentam praticamente todas as funcionalidades que envolvem o
+                armazenamento, consulta e gerenciamento de informações em sistemas computacionais, sendo fundamentais
+                para o funcionamento de bancos de dados, APIs, interfaces de usuário e inúmeras aplicações do cotidiano.
+
+                A operação de criação (Create) é o ponto de partida para qualquer sistema que permita o cadastro de
+                novas informações. Seja ao registrar um novo usuário em um site, adicionar um produto ao estoque ou
+                inserir uma tarefa em um gerenciador pessoal, o sistema precisa ser capaz de receber os dados inseridos
+                e armazená-los de forma estruturada. Essa funcionalidade geralmente é acessada por meio de formulários,
+                que ao serem preenchidos e enviados, geram comandos de inserção no banco de dados. Um exemplo prático
+                seria um sistema de tarefas no qual o usuário insere o título, a descrição e a data de vencimento de uma
+                nova atividade. Ao salvar, essas informações são persistidas no sistema para consultas futuras.</p>
+
+                <img src="img/crud2.jfif">
+
+                <p>Em seguida, destaca-se a operação de leitura (Read), responsável por exibir os dados armazenados. Essa
+                funcionalidade permite que o usuário visualize informações previamente cadastradas, como a lista de
+                produtos em um e-commerce, as mensagens em um aplicativo de comunicação ou as tarefas pendentes em uma
+                agenda digital. A leitura pode ser realizada de forma ampla ou filtrada, dependendo das necessidades do
+                usuário ou das regras de negócio do sistema. Em um sistema de tarefas, por exemplo, é possível listar
+                todas as atividades ou apenas aquelas com prazo de vencimento próximo, oferecendo uma visão organizada
+                das informações.
+                
+                A atualização (Update), por sua vez, permite a modificação de registros já existentes. Nenhum sistema
+                está livre de mudanças, sejam elas correções de erros, alterações de status ou atualizações de conteúdo.
+                Essa operação é essencial para manter os dados corretos e atualizados. Retomando o exemplo do
+                gerenciador de tarefas, o usuário pode perceber que digitou o título de uma atividade de forma incorreta
+                e, por isso, decide editá-lo. Através da funcionalidade de atualização, o sistema permite que esse dado
+                seja modificado sem a necessidade de excluir e recriar o registro.</p>
+
+                <img src="img/crud3.jfif">
+
+                <p>Por fim, a operação de exclusão (Delete) fecha o ciclo do CRUD, possibilitando a remoção de informações
+                que já não são mais necessárias. Essa função é particularmente sensível, pois envolve a perda definitiva
+                de dados, sendo comum que sistemas implementem medidas de confirmação antes de concluir a exclusão. Em
+                nosso cenário de tarefas, após concluir uma atividade, o usuário pode optar por removê-la da lista,
+                deixando o ambiente mais limpo e organizado.
+
+                Além dessas operações básicas, o conceito de CRUD se estende à construção de APIs REST, onde cada ação
+                está associada a métodos HTTP: POST para criação, GET para leitura, PUT/PATCH para atualização e DELETE
+                para exclusão. Isso demonstra como o CRUD transcende a simples manipulação de dados e se integra a
+                padrões de arquitetura amplamente utilizados no desenvolvimento moderno.
+
+                Em síntese, o modelo CRUD representa mais do que apenas um conjunto de operações técnicas: ele simboliza
+                a base lógica da maioria dos sistemas de informação. Sua correta implementação garante eficiência,
+                organização e usabilidade em aplicações das mais diversas áreas, desde cadastros simples até sistemas
+                corporativos complexos. Compreender e aplicar adequadamente cada uma dessas operações é essencial para
+                qualquer profissional que deseje atuar na área de desenvolvimento de software de forma sólida e
+                consciente.</p>
+            </div>
+        </div>
     </div>
 </body>
 

@@ -37,6 +37,8 @@ public class CrudController {
         Iterable<Pessoa> usuarios = csr.findAll();
         mv.addObject("usuarios", usuarios);
         return mv;
+
+        
     }
 }
 
