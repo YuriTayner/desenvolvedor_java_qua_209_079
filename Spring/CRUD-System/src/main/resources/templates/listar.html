@@ -37,7 +37,10 @@
                         <td th:text="${usuario.email}"></td>
                         <td th:text="${usuario.cpf}"></td>
                         <td>
-                            <button class="btn-alterar">Alterar</button>
+                            <div>
+                                <a class="btn-alterar" role="button" th:href="@{'/alterar/' + ${usuario.idPessoa}}">Alterar</a>
+                            </div>
+                            <!-- <button class="btn-alterar">Alterar</button> -->
                             <button class="btn-excluir">Excluir</button>
                         </td>
                     </tr>
@@ -49,53 +52,6 @@
                 <button id="nextBtn">Próximo</button>
             </div>
         </div>
-
-        <!-- <h1>TSTE PAGINAÇÂo</h1>
-        <div>
-            <table class="tabela-usuarios" id="tabela">
-                <thead>
-                    <tr style="color: black;">
-                        <th>IDteste</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>CPF</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>YUri</td>
-                        <td>yuremail</td>
-                        <td>cpfzao</td>
-                        <td>
-                            <button class="btn-alterar">Alterar</button>
-                            <button class="btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Yaaaa</td>
-                        <td>immmail</td>
-                        <td>cpfzinho</td>
-                        <td>
-                            <button class="btn-alterar">Alterar</button>
-                            <button class="btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>RAAAA</td>
-                        <td>goatemail</td>
-                        <td>caadadapff</td>
-                        <td>
-                            <button class="btn-alterar">Alterar</button>
-                            <button class="btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> -->
     </div>
     <script src="js/paginacao.js"></script>
 </body>
