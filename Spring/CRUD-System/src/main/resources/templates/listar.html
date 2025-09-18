@@ -40,8 +40,9 @@
                             <div>
                                 <a class="btn-alterar" role="button" th:href="@{'/alterar/' + ${usuario.idPessoa}}">Alterar</a>
                             </div>
-                            <!-- <button class="btn-alterar">Alterar</button> -->
-                            <button class="btn-excluir">Excluir</button>
+                            <div>
+                                <a class="btn-excluir" role="button" th:href="@{'/excluir/' + ${usuario.idPessoa}}">Excluir</a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>

@@ -59,11 +59,11 @@ public class CrudController {
         return "redirect:/listar";
     }
 
-    @RequestMapping("/confirmarExcluir/{idPessoa}")
+    @RequestMapping("/excluir/{idPessoa}")
     public ModelAndView confirmarExcluir(@PathVariable("idPessoa")
     long idPessoa){
         Pessoa usuario = csr.findByIdPessoa(idPessoa);
-        ModelAndView mv = new ModelAndView("ExcluirUsuario");
+        ModelAndView mv = new ModelAndView("excluir");
         mv.addObject("usuario", usuario);
         return mv;
     }
