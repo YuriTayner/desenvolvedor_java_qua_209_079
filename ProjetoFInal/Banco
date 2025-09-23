@@ -1,0 +1,41 @@
+Usuario
+    idUsuario (PK)
+    nomeUsuario
+    email
+    senha
+
+Empresa
+    idEmpresa (PK)
+    usuario_id (FK → usuarios.id)
+    nomeEmpresa
+    descricaoEmpresa
+    cnpj
+
+Renda
+    idRenda (PK)
+    empresa_id (FK → empresas.id)
+    nomeRenda
+    valorRenda
+    registroRenda
+
+Orcamento
+    idOrcamento (PK)
+    empresa_id (FK → empresas.id)
+    nomeOrcamento
+    valorOrcamento
+    registroOrcamento
+
+Catalogo
+    id (PK)
+    empresa_id (FK → empresas.id)
+    nomeCatalogo
+    descricaoCatalogo
+
+Item
+    idItem (PK)
+    catalogo_id (FK → catalogos.id)
+    nomeItem
+    imagemItem (Ainda não implementar)
+    descricaoItem
+    preco
+    disponibilidade (booleano)
