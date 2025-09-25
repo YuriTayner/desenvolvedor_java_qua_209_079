@@ -1,49 +1,32 @@
-body{
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    background-color: #121212;
-    color: #f0f0f0;
-}
-
-main{
-    flex: 1;
-}
-
-.form-overlay {
+main .form-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    margin: 0 ;
+    margin: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6); /* sombra transparente */
-    /* display: none; começa escondido */
+    background: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
     display: none;
     place-items: center;
 }
 
-.close-btn {
-      position: absolute;
-      top: 140px;
-      right: 390px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
+main .close-btn {
+    position: absolute;
+    top: 30%;
+    right: 35%;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
 
-.close-btn:hover{
+main .close-btn:hover {
     color: red;
 }
 
-main .form-container{
+main .form-container {
     background-color: #1e1e1e;
     padding: 20px;
     display: flex;
@@ -54,24 +37,24 @@ main .form-container{
     margin: 0 auto;
 }
 
-main .form-container-right{
+main .form-container-right {
     width: 50%;
     padding: 20px;
     display: block;
 }
 
-main .form-container-left{
+main .form-container-left {
     width: 50%;
     padding: 20px;
     display: block;
 }
 
-main .form-title{
+main .form-title {
     text-align: center;
     font-size: 2rem;
 }
 
-main .form-input{
+main .form-input {
     display: block;
     width: calc(100% - 40px);
     padding: 10px;
@@ -89,12 +72,12 @@ main .form-input:focus {
     box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
 }
 
-main .form-input::placeholder{
+main .form-input::placeholder {
     color: #898989;
     font-size: 1rem;
 }
 
-main .form-submit{
+main .form-submit {
     display: block;
     width: calc(55% - 40px);
     padding: 10px;
@@ -108,25 +91,19 @@ main .form-submit{
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-main .form-submit:hover{
+main .form-submit:hover {
     border-color: #6A89A7;
     outline: none;
     box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
 }
 
-header{
-    width: 100%;
-    height: 70px;
-    border-bottom: #363636 solid 2px;
+header .form-container {
+    position: fixed;
+    top: 0;
+    /* distância do topo */
+    right: 10px;
+    /* cola no lado esquerdo */
+    width: 450px;
+    /* ocupa a tela toda em altura */
+    color: white;
 }
-
-footer{
-    margin: 0 auto;
-    width: 80%;
-    height: 50px;
-    border-top: #363636 solid 2px;
-    padding: 20px 0;
-    text-align: center;
-}
-
-
