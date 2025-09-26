@@ -13,17 +13,21 @@
     <header>
         <nav>
             <div class="navbar-container">
-                <a>IMG</a>
-                <ul>
-                    <li>
-                        <a>Index</a>
-                    </li>
-                </ul>
+                <div class="nav-container-icon">
+                    <a>IMG</a>
+                </div>
+                <div class="navbar-container-center">
+                    <ul>
+                        <li>
+                            <a>Index</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="form-container">
                     <form method="POST">
-                        <input type="text" placeholder="email">
-                        <input type="text" placeholder="senha">
-                        <button type="submit">Entrar</button>
+                        <input type="text" id="email" name="email" class="form-input" placeholder="email">
+                        <input type="text" id="senha" name="senha" class="form-input" placeholder="senha">
+                        <button type="submit" class="form-submit">Entrar</button>
                     </form>
                 </div>
             </div>
@@ -42,7 +46,7 @@
                         <form method="POST">
                             <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input" placeholder="Digite seu nome">
                             <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email">
-                            <input type="text" id="senh" name="senha" class="form-input" placeholder="Digite sua senha">
+                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha">
                             <button type="submit" class="form-submit">Cadastrar</button>
                         </form>
                     </div>

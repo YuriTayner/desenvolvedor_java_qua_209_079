@@ -17,7 +17,7 @@ main{
 
 header{
     width: 100%;
-    height: 70px;
+    height: auto;
     border-bottom: #363636 solid 2px;
 }
 
@@ -33,8 +33,19 @@ footer{
 .navbar-container{
     width: 100%;
     height: 100%;
-    height: auto;
     display: flex;
+}
+
+.nav-container-icon{
+    width: 4%;
+    height: 70px;
+    border: red solid 1px;
+}
+
+.navbar-container-center{
+    width: 76%;
+    height: 70px;
+    border: red solid 1px;
 }
 
 

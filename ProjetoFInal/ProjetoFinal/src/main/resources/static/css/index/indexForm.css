@@ -98,12 +98,32 @@ main .form-submit:hover {
 }
 
 header .form-container {
-    position: fixed;
-    top: 0;
-    /* distância do topo */
-    right: 10px;
-    /* cola no lado esquerdo */
-    width: 450px;
-    /* ocupa a tela toda em altura */
-    color: white;
+    width: 20%;
+    height: 70px;
+    background-color: #1e1e1e;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .form-input {
+    width: 20%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    background-color: #1e1e1e;
+    /* transition: border-color 0.3s ease, box-shadow 0.3s ease; */
+}
+
+header .form-submit{
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    color: #898989;
+    background-color: #1e1e1e;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }

@@ -6,25 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo e orçamentos</title>
     <link th:href="@{/css/index/styleIndex.css}" rel="stylesheet" type="text/css" media="all">
+    <link th:href="@{/css/index/indexForm.css}" rel="stylesheet" type="text/css" media="all">
     <link th:href="@{/css/logged/styleLogged.css}" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body>
     <header>
-        <nav>Header</nav>
+        <nav>
+            <div class="navbar-container">
+                <div class="nav-container-icon">
+                    <a>IMG</a>
+                </div>
+                <div class="navbar-container-center">
+                    <ul>
+                        <li>
+                            <a>Index</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-container-usuario-button">
+                    <ul>
+                        <li>
+                            <a>Editar conta</a>
+                            <a>Excluir conta</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="container">
-            <h1>Seja bem vindo $nome!</h1>
+            <h1>Seja bem vindo <span th:text="${usuario.nomeUsuario}"></span>!</h1>
             <div class="empresa-container">
-                <h2>Suas empresas</h2>
-                <div class="empresa-card" role="button">
-                    Empresa
+                <div class="empresa-container-header">
+                    <div class="empresa-container-header-title">
+                        <h2>Suas empresas</h2>
+                    </div>
+                    <div class="empresa-container-header-button">
+                        <button class="criarEmpresa" onclick="abrirForm()" id="openForm">+</button>
+                    </div>
+                </div>
+                <div class="empresa-container-main">
+                    <div class="empresa-card" role="button">
+                        Empresa
+                        <button>...</button>
+                    </div>
                 </div>
             </div>
+            <!-- <div class="form-overlay" id="form-overlay">
+                <div class="form-container">
+                    <button class="close-btn" onclick="fecharForm()" id="closeForm">X</button>
+                    <div class="form-container-left">Imagem pikaaa</div>
+                    <div class="form-container-right">
+                        <h2 class="form-title">Cadastro de Usuário</h2>
+                        <form method="POST">
+                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input" placeholder="Digite seu nome">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email">
+                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha">
+                            <button type="submit" class="form-submit">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div> NN TA INDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
         </div>
     </main>
     <footer>Footer</footer>
     <script src="js/formIndex.js"></script>
 </body>
+
 </html>
