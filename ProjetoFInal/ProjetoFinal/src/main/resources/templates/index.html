@@ -14,19 +14,16 @@
         <nav>
             <div class="navbar-container">
                 <div class="nav-container-icon">
-                    <a>IMG</a>
+                    <img src="/img/boxIcon.png">
                 </div>
                 <div class="navbar-container-center">
-                    <ul>
-                        <li>
-                            <a>Index</a>
-                        </li>
-                    </ul>
+                    <h1>Catalogos e Orçamento da Sua Empresa!</h1>
                 </div>
                 <div class="form-container">
-                    <form method="POST">
-                        <input type="text" id="email" name="email" class="form-input" placeholder="email">
-                        <input type="text" id="senha" name="senha" class="form-input" placeholder="senha">
+                    <form action="/login" method="post">
+                        <span>Acesse sua conta</span>
+                        <input type="text" id="email" name="email" class="form-input" placeholder="email" required>
+                        <input type="text" id="senha" name="senha" class="form-input" placeholder="senha" required>
                         <button type="submit" class="form-submit">Entrar</button>
                     </form>
                 </div>
@@ -35,8 +32,7 @@
     </header>
     <main>
         <div class="container">
-            <h1>Catalogos e Orçamento da Sua Empresa!</h1>
-            <button onclick="abrirForm()" id="openForm">Abrir Formulário</button>
+            <button onclick="abrirForm()" id="openForm">Não possui conta ainda? CLIQUE AQUI</button>
             <div class="form-overlay" id="form-overlay">
                 <div class="form-container">
                     <button class="close-btn" onclick="fecharForm()" id="closeForm">X</button>
@@ -44,9 +40,9 @@
                     <div class="form-container-right">
                         <h2 class="form-title">Cadastro de Usuário</h2>
                         <form method="POST">
-                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input" placeholder="Digite seu nome">
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email">
-                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha">
+                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input" placeholder="Digite seu nome" required>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email" required>
+                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha" required>
                             <button type="submit" class="form-submit">Cadastrar</button>
                         </form>
                     </div>

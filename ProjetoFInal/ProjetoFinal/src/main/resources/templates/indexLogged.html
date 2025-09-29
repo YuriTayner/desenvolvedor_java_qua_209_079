@@ -14,21 +14,27 @@
     <header>
         <nav>
             <div class="navbar-container">
-                <div class="nav-container-icon">
-                    <a>IMG</a>
+                 <div class="nav-container-icon">
+                    <img src="/img/boxIcon.png">
                 </div>
-                <div class="navbar-container-center">
+                 <div class="navbar-container-center">
+                    <h1>Catalogos e Orçamento da Sua Empresa!</h1>
+                </div>
+                <div class="navbar-container-usuario-options">
                     <ul>
                         <li>
-                            <a>Index</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="navbar-container-usuario-button">
-                    <ul>
-                        <li>
-                            <a>Editar conta</a>
-                            <a>Excluir conta</a>
+                            <div class="usuario-option">
+                                <img src="/img/pencil.png">
+                                <a onclick="document.getElementById('form-overlay').style.display='block'">Editar conta</a>
+                            </div>
+                            <div class="usuario-option">
+                                <img src="/img/trash.png">
+                                <a th:href="@{'/excluir?idUsuario=' + ${usuario.idUsuario}}">Excluir conta(NN CLICAR)</a>
+                            </div>
+                            <div class="usuario-option">
+                                <img src="/img/exit.png">
+                                <a th:href="@{'/logout'}">Sair</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +50,7 @@
                         <h2>Suas empresas</h2>
                     </div>
                     <div class="empresa-container-header-button">
-                        <button class="criarEmpresa" onclick="abrirForm()" id="openForm">+</button>
+                        <button class="criarEmpresa">+</button>
                     </div>
                 </div>
                 <div class="empresa-container-main">
@@ -54,21 +60,21 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="form-overlay" id="form-overlay">
+            <div class="form-overlay" id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:999;">
                 <div class="form-container">
-                    <button class="close-btn" onclick="fecharForm()" id="closeForm">X</button>
-                    <div class="form-container-left">Imagem pikaaa</div>
+                    <button class="close-btn" onclick="document.getElementById('form-overlay').style.display='none'" id="closeForm">X</button>
+                    <div class="form-container-left">Imagem do usuário</div>
                     <div class="form-container-right">
-                        <h2 class="form-title">Cadastro de Usuário</h2>
-                        <form method="POST">
-                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input" placeholder="Digite seu nome">
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email">
-                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha">
-                            <button type="submit" class="form-submit">Cadastrar</button>
+                        <h2 class="form-title">Editar Cadastro</h2>
+                        <form th:action="@{'/editar'}" method="post">
+                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input" placeholder="Digite seu nome" th:value="${usuario.nomeUsuario}">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email" th:value="${usuario.email}">
+                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha" th:value="${usuario.senha}">
+                            <button type="submit" class="form-submit">Salvar alterações</button>
                         </form>
                     </div>
                 </div>
-            </div> NN TA INDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
+            </div>
         </div>
     </main>
     <footer>Footer</footer>
