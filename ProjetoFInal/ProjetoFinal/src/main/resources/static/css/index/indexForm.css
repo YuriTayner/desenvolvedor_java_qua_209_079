@@ -129,3 +129,10 @@ header .form-submit{
     cursor: pointer;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.form-container-empresa{
+    width: 20%;
+    height: auto;
+    margin: 0 auto;
+    
+}

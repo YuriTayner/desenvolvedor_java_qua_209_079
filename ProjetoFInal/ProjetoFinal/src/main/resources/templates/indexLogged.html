@@ -14,10 +14,10 @@
     <header>
         <nav>
             <div class="navbar-container">
-                 <div class="nav-container-icon">
+                <div class="nav-container-icon">
                     <img src="/img/boxIcon.png">
                 </div>
-                 <div class="navbar-container-center">
+                <div class="navbar-container-center">
                     <h1>Catalogos e Orçamento da Sua Empresa!</h1>
                 </div>
                 <div class="navbar-container-usuario-options">
@@ -25,11 +25,13 @@
                         <li>
                             <div class="usuario-option">
                                 <img src="/img/pencil.png">
-                                <a onclick="document.getElementById('form-overlay').style.display='block'">Editar conta</a>
+                                <a onclick="document.getElementById('form-overlay').style.display='block'">Editar
+                                    conta</a>
                             </div>
                             <div class="usuario-option">
                                 <img src="/img/trash.png">
-                                <a th:href="@{'/excluir?idUsuario=' + ${usuario.idUsuario}}">Excluir conta(NN CLICAR)</a>
+                                <a th:href="@{'/excluir?idUsuario=' + ${usuario.idUsuario}}">Excluir conta(NN
+                                    CLICAR)</a>
                             </div>
                             <div class="usuario-option">
                                 <img src="/img/exit.png">
@@ -53,23 +55,47 @@
                         <button class="criarEmpresa">+</button>
                     </div>
                 </div>
-                <div class="empresa-container-main">
+                <div th:if="${#lists.isEmpty(empresas)}" class="empresa-container-main">
+                    <p>Você ainda não cadastrou nenhuma empresa.</p>
+                    <div class="form-container-empresa">
+                        <form method="post" th:action="@{'/cadastrarEmpresa'}">
+                            <input type="text" id="nomeFantasia" name="nomeFantasia" class="form-input"
+                                placeholder="Nome da empresa" required>
+                            <input type="text" id="cnpj" name="cnpj" class="form-input" placeholder="CNPJ da empresa"
+                                required>
+                            <input type="text" id="descricaoEmpresa" name="descricaoEmpresa" class="form-input"
+                                placeholder="Descrição da empresa" required>
+
+                            <input type="hidden" name="idUsuario" th:value="${usuario.idUsuario}">
+                            <button type="submit" class="form-submit">Cadastrar Empresa</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div th:if="${!#lists.isEmpty(empresas)}" class="empresa-container-main">
                     <div class="empresa-card" role="button">
                         Empresa
                         <button>...</button>
+                        <p>Existe uma empresa cadastrada, o form está no if nn existir empresa e mapeia a empresaLogged</p>
                     </div>
                 </div>
+
             </div>
-            <div class="form-overlay" id="form-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:999;">
+            <div class="form-overlay" id="form-overlay"
+                style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:999;">
                 <div class="form-container">
-                    <button class="close-btn" onclick="document.getElementById('form-overlay').style.display='none'" id="closeForm">X</button>
+                    <button class="close-btn" onclick="document.getElementById('form-overlay').style.display='none'"
+                        id="closeForm">X</button>
                     <div class="form-container-left">Imagem do usuário</div>
                     <div class="form-container-right">
                         <h2 class="form-title">Editar Cadastro</h2>
                         <form th:action="@{'/editar'}" method="post">
-                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input" placeholder="Digite seu nome" th:value="${usuario.nomeUsuario}">
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email" th:value="${usuario.email}">
-                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha" th:value="${usuario.senha}">
+                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input"
+                                placeholder="Digite seu nome" th:value="${usuario.nomeUsuario}">
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Digite seu email" th:value="${usuario.email}">
+                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha"
+                                th:value="${usuario.senha}">
                             <button type="submit" class="form-submit">Salvar alterações</button>
                         </form>
                     </div>
