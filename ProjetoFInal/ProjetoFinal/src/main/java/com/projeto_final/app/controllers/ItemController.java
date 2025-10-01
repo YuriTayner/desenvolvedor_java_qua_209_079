@@ -7,35 +7,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.projeto_final.app.models.Catalogo;
+import com.projeto_final.app.models.Empresa;
+import com.projeto_final.app.models.Item;
+import com.projeto_final.app.models.Usuario;
+import com.projeto_final.app.repository.ItemRepository;
+
 import jakarta.servlet.http.HttpSession;
 
-import com.projeto_final.app.models.Empresa;
-import com.projeto_final.app.models.Usuario;
-import com.projeto_final.app.repository.EmpresaRepository;
-
 @Controller
-public class EmpresaController {
+public class ItemController {
     @Autowired
-    private EmpresaRepository empresaRepository;
+    private ItemRepository itemRepository;
 
-
-    @PostMapping("/cadastrarEmpresa")
-    public String cadastrarEmpresa(Empresa empresa, HttpSession session) {
+    @PostMapping("/cadastrarItem")
+    public String cadastrarItem(Item item, HttpSession session) {
         Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+        Empresa empresa = (Empresa) session.getAttribute("empresaLogada");
+        Catalogo catalogo = (Catalogo) session.getAttribute("catalogoLogado");
         if (usuario == null) {
             return "redirect:/";
         }
-        empresa.setUsuario(usuario);
-        empresaRepository.save(empresa);
+        item.setCatalogo(catalogo);
+        itemRepository.save(item);
         session.setAttribute("empresaLogada", empresa);
         return "redirect:/empresaLogged?" + "idUsuario=" + usuario.getIdUsuario() + "&idEmpresa=" + empresa.getIdEmpresa();
     }
 
-    @RequestMapping(value="/listarEmpresa", method=RequestMethod.GET)
+    @RequestMapping(value="/listarItem", method=RequestMethod.GET)
     public ModelAndView listar(){
-        ModelAndView mv = new ModelAndView("listarEmpresa");
-        Iterable<Empresa> empresas = empresaRepository.findAll();
-        mv.addObject("empresas", empresas);
+        ModelAndView mv = new ModelAndView("listar");
+        Iterable<Item> itens = itemRepository.findAll();
+        mv.addObject("itens", itens);
         return mv;
     }
+    
 }

@@ -9,4 +9,5 @@ import com.projeto_final.app.models.Usuario;
 
 public interface EmpresaRepository extends CrudRepository<Empresa, Long> {
     List<Empresa> findByUsuario(Usuario usuario);
+    Empresa findByIdEmpresa(long idEmpresa);
 }

@@ -1,16 +1,19 @@
 package com.projeto_final.app.models;
 
 import java.io.Serializable;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
-public class Empresa implements Serializable{
+public class Empresa implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,6 +25,9 @@ public class Empresa implements Serializable{
     @ManyToOne
     @JoinColumn(name = "idUsuario", nullable = false)
     private Usuario usuario;
+
+    @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Catalogo> catalogos;
 
     public Empresa() {
     }
@@ -64,6 +70,14 @@ public class Empresa implements Serializable{
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public List<Catalogo> getCatalogos() {
+        return catalogos;
+    }
+
+    public void setCatalogos(List<Catalogo> catalogos) {
+        this.catalogos = catalogos;
     }
 
 }

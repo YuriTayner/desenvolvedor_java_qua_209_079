@@ -7,6 +7,7 @@
     <title>Catalogo e orçamentos</title>
     <link th:href="@{/css/index/styleIndex.css}" rel="stylesheet" type="text/css" media="all">
     <link th:href="@{/css/index/indexForm.css}" rel="stylesheet" type="text/css" media="all">
+    <link th:href="@{/css/logged/empresaLogged.css}" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body>
@@ -24,9 +25,39 @@
     </header>
     <main>
         <div class="container">
+            <div class="empresa-container-header">
+                <h1><span th:text="${empresa.nomeFantasia}"></span>!</h1>
+                <a th:href="@{'/indexLogged/' + ${usuario.idUsuario}}">Voltar</a>
+            </div>
 
+            <div class="catalog-container-main">
+                <div class="catalog-container-main-dashboard">
+                    <div class="catalog-container-main-dashboard-header">
+                        Catalogos
+                    </div>
+                    <div class="catalog-container-main-option">
+                        <h2>Catalogo</h2>
+                        <p>Descrição</p>
+                    </div>
+                    <div class="catalog-container-main-option">
+                        <h2>Catalogo 2</h2>
+                        <p>Descrição</p>
+                    </div>
+                    <div class="catalog-container-main-option">
+                        <form action="">
+                            <input type="text" placeholder="Nome do Catalogo">
+                            <input type="text" placeholder="Descrição do Catalogo">
+                            <button type="submit">Criar Catalogo</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="catalog-container-main-selected">
+                    <p>Nenhuma catalogo selecionado</p>
+                </div>
+            </div>
         </div>
     </main>
     <footer>Footer</footer>
 </body>
+
 </html>

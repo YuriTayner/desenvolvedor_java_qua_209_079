@@ -72,9 +72,9 @@
                     </div>
                 </div>
 
-                <div th:if="${!#lists.isEmpty(empresas)}" class="empresa-container-main">
-                    <div th:each="empresa : ${empresas}">
-                        <a class="empresa-card" role="button" th:href="@{'/empresaLogged?idUsuario=' + ${usuario.idUsuario} + '&idEmpresa=' + ${empresa.idEmpresa}}">
+                <div th:if="${!#lists.isEmpty(empresas)}">
+                    <div th:each="empresa : ${empresas}" class="empresa-container-main">
+                        <a class="empresa-card" role="button" th:href="@{'/empresaLogged/' + ${usuario.idUsuario} + '/' + ${empresa.idEmpresa}}">
                             <span th:text="${empresa.nomeFantasia}"></span>
                             <button>...</button>
                             <p><span th:text="${empresa.descricaoEmpresa}"></span></p>
