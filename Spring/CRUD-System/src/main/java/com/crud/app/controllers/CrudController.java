@@ -12,9 +12,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.crud.app.models.Pessoa;
 import com.crud.app.repository.AppRepository;
-
-import ch.qos.logback.core.model.Model;
-
 @Controller
 public class CrudController {
     @Autowired

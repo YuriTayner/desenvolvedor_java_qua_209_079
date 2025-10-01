@@ -35,7 +35,7 @@
                             </div>
                             <div class="usuario-option">
                                 <img src="/img/exit.png">
-                                <a th:href="@{'/logout'}">Sair</a>
+                                <a th:href="@{'/logout'}" role="button">Sair</a>
                             </div>
                         </li>
                     </ul>
@@ -73,10 +73,12 @@
                 </div>
 
                 <div th:if="${!#lists.isEmpty(empresas)}" class="empresa-container-main">
-                    <div class="empresa-card" role="button">
-                        Empresa
-                        <button>...</button>
-                        <p>Existe uma empresa cadastrada, o form está no if nn existir empresa e mapeia a empresaLogged</p>
+                    <div th:each="empresa : ${empresas}">
+                        <a class="empresa-card" role="button" th:href="@{'/empresaLogged?idUsuario=' + ${usuario.idUsuario} + '&idEmpresa=' + ${empresa.idEmpresa}}">
+                            <span th:text="${empresa.nomeFantasia}"></span>
+                            <button>...</button>
+                            <p><span th:text="${empresa.descricaoEmpresa}"></span></p>
+                        </a>
                     </div>
                 </div>
 
