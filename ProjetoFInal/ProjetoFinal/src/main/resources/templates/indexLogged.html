@@ -52,36 +52,39 @@
                         <h2>Suas empresas</h2>
                     </div>
                     <div class="empresa-container-header-button">
-                        <button class="criarEmpresa">+</button>
+                        <button id="openAddEmpresa" onclick="document.getElementById('overlay-addEmpresa').style.display='grid'">+</button>
+                    </div>
+                    <div class="overlay-addEmpresa" id="overlay-addEmpresa">
+                        <button class="close-btn" id="closeAddEmpresa" onclick="document.getElementById('overlay-addEmpresa').style.display='none'">X</button>
+                        <div class="form-container-empresa">
+                            <h2 class="form-title">Criar Empresa</h2>
+                            <form method="post" th:action="@{'/cadastrarEmpresa'}">
+                                <input type="text" id="nomeFantasia" name="nomeFantasia" class="form-input"
+                                    placeholder="Nome da empresa" required>
+                                <input type="text" id="cnpj" name="cnpj" class="form-input"
+                                    placeholder="CNPJ da empresa" required>
+                                <input type="text" id="descricaoEmpresa" name="descricaoEmpresa" class="form-input"
+                                    placeholder="Descrição da empresa" required>
+                                <input type="hidden" name="idUsuario" th:value="${usuario.idUsuario}">
+                                <button type="submit" class="form-submit">Cadastrar Empresa</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div th:if="${#lists.isEmpty(empresas)}" class="empresa-container-main">
                     <p>Você ainda não cadastrou nenhuma empresa.</p>
-                    <div class="form-container-empresa">
-                        <form method="post" th:action="@{'/cadastrarEmpresa'}">
-                            <input type="text" id="nomeFantasia" name="nomeFantasia" class="form-input"
-                                placeholder="Nome da empresa" required>
-                            <input type="text" id="cnpj" name="cnpj" class="form-input" placeholder="CNPJ da empresa"
-                                required>
-                            <input type="text" id="descricaoEmpresa" name="descricaoEmpresa" class="form-input"
-                                placeholder="Descrição da empresa" required>
-
-                            <input type="hidden" name="idUsuario" th:value="${usuario.idUsuario}">
-                            <button type="submit" class="form-submit">Cadastrar Empresa</button>
-                        </form>
-                    </div>
                 </div>
 
                 <div th:if="${!#lists.isEmpty(empresas)}">
                     <div th:each="empresa : ${empresas}" class="empresa-container-main">
-                        <a class="empresa-card" role="button" th:href="@{'/empresaLogged/' + ${usuario.idUsuario} + '/' + ${empresa.idEmpresa}}">
-                            <span th:text="${empresa.nomeFantasia}"></span>
-                            <button>...</button>
-                            <p><span th:text="${empresa.descricaoEmpresa}"></span></p>
-                        </a>
+                        <a class="empresa-card" role="button"
+                            th:href="@{'/empresaLogged/' + ${usuario.idUsuario} + '/' + ${empresa.idEmpresa}}">
+                            <span class="empresa-card-link" th:text="${empresa.nomeFantasia}"></span>
+                            <button class="empresa-card-button">...</button>
+                            <p class="empresa-card-link"><span th:text="${empresa.descricaoEmpresa}"></span></p>
+                            <a>
                     </div>
                 </div>
-
             </div>
             <div class="form-overlay" id="form-overlay"
                 style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:999;">

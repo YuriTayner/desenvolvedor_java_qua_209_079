@@ -31,7 +31,7 @@ public class UsuarioController {
         return "redirect:/";
     }
 
-    @PostMapping("/editar")
+    @PostMapping("/editarUsuario")
     public String editarUsuario(@RequestParam String nomeUsuario,
             @RequestParam String email,
             @RequestParam String senha,

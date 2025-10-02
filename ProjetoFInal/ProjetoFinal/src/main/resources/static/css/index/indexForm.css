@@ -19,11 +19,12 @@ main .close-btn {
     background: none;
     border: none;
     font-size: 24px;
+    color: red;
     cursor: pointer;
 }
 
 main .close-btn:hover {
-    color: red;
+    color: rgb(172, 0, 0);
 }
 
 main .form-container {
@@ -131,8 +132,8 @@ header .form-submit{
 }
 
 .form-container-empresa{
-    width: 20%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
-    
+    display: flex;
 }
