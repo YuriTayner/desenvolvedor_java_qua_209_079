@@ -17,7 +17,7 @@
                     <img src="/img/boxIcon.png">
                 </div>
                 <div class="navbar-container-center">
-                    <h1>Catalogos e Orçamento da Sua Empresa!</h1>
+                    <h1>Catalogos e Orçamentos da Sua Empresa!</h1>
                 </div>
                 <div class="form-container">
                     <form action="/login" method="post">
@@ -32,17 +32,29 @@
     </header>
     <main>
         <div class="container">
+            <div class="container-text">Crie Catálogos Profissionais e Destaque sua Empresa
+
+                Bem-vindo ao Catalogos e Orçamentos! Aqui você pode cadastrar sua empresa e criar catálogos personalizados com
+                os seus produtos ou serviços de forma rápida, prática e profissional.
+                Ideal para empreendedores, lojistas e prestadores de serviço que querem divulgar seus itens com
+                organização e estilo.
+
+                Cadastre-se gratuitamente, adicione os dados da sua empresa e comece agora mesmo a montar catálogos
+                digitais que impressionam seus clientes!</div>
             <button onclick="abrirForm()" id="openForm">Não possui conta ainda? CLIQUE AQUI</button>
             <div class="form-overlay" id="form-overlay">
                 <div class="form-container">
                     <button class="close-btn" onclick="fecharForm()" id="closeForm">X</button>
-                    <div class="form-container-left">Imagem pikaaa</div>
+                    <div class="form-container-left"><img src="img/boxIcon.png"></div>
                     <div class="form-container-right">
                         <h2 class="form-title">Cadastro de Usuário</h2>
                         <form method="POST">
-                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input" placeholder="Digite seu nome" required>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Digite seu email" required>
-                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha" required>
+                            <input type="text" id="nomeUsuario" name="nomeUsuario" class="form-input"
+                                placeholder="Digite seu nome" required>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Digite seu email" required>
+                            <input type="text" id="senha" name="senha" class="form-input" placeholder="Digite sua senha"
+                                required>
                             <button type="submit" class="form-submit">Cadastrar</button>
                         </form>
                     </div>
@@ -53,4 +65,5 @@
     <footer>Footer</footer>
     <script src="js/formIndex.js"></script>
 </body>
+
 </html>

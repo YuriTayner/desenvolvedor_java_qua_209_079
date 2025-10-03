@@ -1,18 +1,82 @@
-body{
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    background-color: #121212;
+body {
+    background: #121212;
     color: #f0f0f0;
-    overflow: hidden;
+}
+/* Estilo para o texto de introdução */
+.container-text {
+    background: linear-gradient(90deg, #1e1e1e 60%, #232323 100%);
+    color: #f0f0f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 24px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+    border-left: 6px solid #6A89A7;
+    position: relative;
+    transition: box-shadow 0.3s;
+    border: 2px solid #232323;
 }
 
-main{
-    flex: 1;
+.container-text::before {
+    content: "Bem-vindo!";
+    position: absolute;
+    top: 12px;
+    left: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6A89A7;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+#openForm {
+    display: block;
+    margin: 0 auto 32px auto;
+    padding: 12px 32px;
+    background: #232323;
+    color: #6A89A7;
+    border: 2px solid #6A89A7;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+#openForm {
+    display: block;
+    margin: 0 auto 32px auto;
+    padding: 12px 32px;
+    background: #232323;
+    color: #6A89A7;
+    border: 2px solid #6A89A7;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    letter-spacing: 1px;
+}
+#openForm:hover {
+    background: #6A89A7;
+    color: #232323;
+    border-color: #232323;
+    box-shadow: 0 4px 16px rgba(106,137,167,0.15);
+}
+@media (max-width: 900px) {
+    .container-text {
+        font-size: 1rem;
+        padding: 18px 8px 18px 8px;
+    }
+    #openForm {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
 }
 
 header{

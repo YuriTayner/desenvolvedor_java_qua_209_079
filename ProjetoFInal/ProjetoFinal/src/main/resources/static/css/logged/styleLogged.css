@@ -1,3 +1,7 @@
+body {
+    background: #121212;
+    color: #f0f0f0;
+}
 .container{
     width: 100%;
     height: 720px;
@@ -82,25 +86,61 @@
 .empresa-card{
     flex: 0 0 15%;  
     width: 15%;
+    min-width: 180px;
     height: 30%;
-    padding: 10px;
-    background-color: #363636;
+    padding: 16px 10px;
+    background: linear-gradient(90deg, #232323 70%, #363636 100%);
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
+    color: #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: 2px solid #6A89A7;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.empresa-card:hover {
+    background: #6A89A7;
+    color: #232323;
+    border-color: #232323;
+    box-shadow: 0 4px 16px rgba(106,137,167,0.15);
+    .empresa-card-link{
+        color: #232323;
+    }
 }
 
 .empresa-card-link{
-    color: aliceblue;
-    
+    color: #6A89A7;
+    font-weight: bold;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
 }
 
 .empresa-card-button{
-    background-color: #121212;
-    border: 2px solid #363636;
+    background-color: #232323;
+    border: 2px solid #6A89A7;
     border-radius: 10px;
+    color: #6A89A7;
+    font-size: 1.1rem;
+    padding: 4px 12px;
     margin-left: 0 auto;
-    color: aliceblue;
-
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.empresa-card-button:hover {
+    background: #6A89A7;
+    color: #232323;
+    border-color: #232323;
+}
+@media (max-width: 900px) {
+    .empresa-container-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .empresa-card {
+        width: 90%;
+        min-width: unset;
+        margin-bottom: 16px;
+    }
 }
 
